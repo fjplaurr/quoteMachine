@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { unwatchFile } from 'fs';
-import '/.QuoteMachine.css';
 
 class QuoteMachine extends React.Component{
     constructor(props){
@@ -15,8 +14,8 @@ class QuoteMachine extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <h1>Pruebaa</h1>
-                <button onClick = {this.getRandomQUote}>
+                <h1 className = "ClasePrueba">Quote of the day</h1>
+                <button type="button" class="btn btn-info" onClick = {this.getRandomQUote}>
                     Click me to get a random quote
                 </button> 
                 <br/>
