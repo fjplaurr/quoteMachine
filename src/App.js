@@ -7,7 +7,9 @@ import './QuoteMachine.css';
 function App() {
   return (
     <div className="App">
+    <div className="wrapper">
       <QuoteMachine /> 
+      </div>
     </div>
   );
 }

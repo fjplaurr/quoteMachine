@@ -14,12 +14,14 @@ class QuoteMachine extends React.Component{
     render(){
         return(
             <React.Fragment>
-                <h1 className = "ClasePrueba">Quote of the day</h1>
+                <h3 className = "ClasePrueba">
+                    {this.state.hasQuote === false ? 'There is not a quote yet' : this.state.quote}
+                </h3>
                 <button type="button" class="btn btn-info" onClick = {this.getRandomQUote}>
-                    Click me to get a random quote
+                    Get a random quote
                 </button> 
                 <br/>
-                {this.state.hasQuote === false ? 'There is not a quote yet' : this.state.quote}
+                
             </React.Fragment>
         )
     }
