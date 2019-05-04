@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   width:100%;
   text-align: center;
-  background-color:rgb(200, 230, 240);
+  background-color:rgb(118, 197, 223);
 }
 
 .App {
@@ -10,9 +10,9 @@ html, body {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 100vw;
+  width: 60vw;
   height: 50vh;
-  margin-left: -50vw;
+  margin-left: -30vw;
   margin-top: -25vh;
   display: flex;
   flex-direction: row;

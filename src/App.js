@@ -6,10 +6,8 @@ import './QuoteMachine.css';
 
 function App() {
   return (
-    <div className="App">
-    <div className="wrapper">
+    <div className="App" id="quote-box">
       <QuoteMachine /> 
-      </div>
     </div>
   );
 }

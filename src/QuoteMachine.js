@@ -6,20 +6,32 @@ class QuoteMachine extends React.Component{
         super(props);
         this.state = {
             quote: '',
-            hasQuote: false
+            author: '',
+            color: ''
         }
-        this.END_POINT = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
+    }
+
+    componentDidMount(){
+        this.getRandomQUote();
     }
 
     render(){
         return(
             <React.Fragment>
-                <h3 className = "ClasePrueba">
-                    {this.state.hasQuote === false ? 'There is not a quote yet' : this.state.quote}
-                </h3>
-                <button type="button" class="btn btn-info" onClick = {this.getRandomQUote}>
+                    <h3 id="text">
+                        {this.state.quote}
+                    </h3>
+                    <h4 id="author">
+                        - {this.state.author}
+                    </h4>
+                <button type="button" class="btn btn-info" id="new-quote" onClick = {this.getRandomQUote}>
                     Get a random quote
-                </button> 
+                </button>
+                <a id="tweet-quote" target="_blank" href="http://twitter.com/intent/tweet">
+                    <button type="button" class="btn btn-info">
+                        Share on Twitter
+                    </button>
+                </a>
                 <br/>
                 
             </React.Fragment>
@@ -27,22 +39,27 @@ class QuoteMachine extends React.Component{
     }
     
     getRandomQUote = () => {
-        fetch(this.END_POINT)
+        fetch('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json')
          .then(response => response.json())
           .then(data => {
               if(data.quotes){
                   let randomQuote = data.quotes[Math.floor(Math.random()*data.quotes.length)];
                   this.setState(
                       {
-                          hasQuote: true,
-                          quote: randomQuote.quote
+                          quote: randomQuote.quote,
+                          author: randomQuote.author
                       }
                   )
                   console.log(this.state);
               }else{
                   return console.log('No quote was found')
               }
-        })
+        }).then(this.changeColor())
+    }
+
+    changeColor = () => {
+        
+
     }
 }
  
