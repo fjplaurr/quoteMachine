@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import { unwatchFile } from 'fs';
+import React from 'react';
 
 class QuoteMachine extends React.Component{
     constructor(props){
@@ -9,6 +8,8 @@ class QuoteMachine extends React.Component{
             author: '',
             color: ''
         }
+        this.changeColor = this.changeColor.bind(this);
+        this.getRandomQUote = this.getRandomQUote.bind(this);
     }
 
     componentDidMount(){
@@ -24,11 +25,16 @@ class QuoteMachine extends React.Component{
                     <h4 id="author">
                         - {this.state.author}
                     </h4>
-                <button type="button" class="btn btn-info" id="new-quote" onClick = {this.getRandomQUote}>
+                <button type="button" className="btn btn-info" id="new-quote"
+                    onClick = {()=>
+                        {this.getRandomQUote();
+                            this.changeColor();
+                        }}
+                >
                     Get a random quote
                 </button>
-                <a id="tweet-quote" target="_blank" href="http://twitter.com/intent/tweet">
-                    <button type="button" class="btn btn-info">
+                <a id="tweet-quote" target="_blank" rel="noopener noreferrer" href="http://twitter.com/intent/tweet">
+                    <button type="button" className="btn btn-info">
                         Share on Twitter
                     </button>
                 </a>
@@ -50,19 +56,29 @@ class QuoteMachine extends React.Component{
                           author: randomQuote.author
                       }
                   )
-                  console.log(this.state);
               }else{
                   return console.log('No quote was found')
               }
-        }).then(this.changeColor())
+        }).then(this.changeColor)
     }
 
     changeColor = () => {
-        
+        var letters = '0123456789ABCDEF';
+	    var colory = '#';
+	    for (var i = 0; i < 6; i++ ) {
+		  colory += letters[Math.floor(Math.random() * 16)];
+	    }
+        this.setState(
+            {
+            color: colory
+            }
+        )
+        document.body.style.backgroundColor=this.state.color;
+
 
     }
+
+
 }
  
-
-
 export default QuoteMachine;
