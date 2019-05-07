@@ -35,7 +35,8 @@ class QuoteMachine extends React.Component{
                 </button>
                 <a id="tweet-quote" target="_blank" rel="noopener noreferrer" href="http://twitter.com/intent/tweet">
                     <button type="button" className="btn btn-info">
-                        Share on Twitter
+                   
+                    Tweet <i class="fab fa-twitter"></i>
                     </button>
                 </a>
                 <br/>
