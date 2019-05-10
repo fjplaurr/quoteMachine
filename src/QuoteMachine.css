@@ -6,6 +6,7 @@
     font-weight: bold;
     color: rgb(0, 30, 40);
     font-size: 22px;
+    transition: color 3s;
 }
 
 #author{
@@ -17,6 +18,7 @@
     position: absolute;
     bottom: 50px;
     right: 15px;
+    transition: color 3s;
 }
 
 #new-quote{

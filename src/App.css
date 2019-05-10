@@ -3,6 +3,7 @@ html, body {
   width:100%;
   text-align: center;
   background-color:rgb(118, 197, 223);
+  transition: background-color 3s;
 }
 
 .App {
