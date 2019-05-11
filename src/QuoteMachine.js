@@ -17,19 +17,20 @@ class QuoteMachine extends React.Component{
     }
 
     componentDidUpdate(){ //Need this function to avoid async trouble due to state's updates
-        document.body.style.backgroundColor = this.state.color;
+        document.getElementById('quote-box').style.backgroundColor= this.state.color;
     }
 
     render(){
         return(
-            <React.Fragment>
+            <div id="mainDiv">
                 <h3 id="text" style={{color: this.state.color}}>
                     {this.state.quote}
                 </h3>
                 <h4 id="author" style={{color: this.state.color}}>
                     - {this.state.author}
                 </h4>
-                <button type="button" className="btn btn-info" id="new-quote"
+                <div id="divButtons">
+                <button id="new-quote" class="butt" style={{backgroundColor:this.state.color}}
                     onClick = {()=>
                         {
                             this.getRandomQUote();
@@ -37,15 +38,16 @@ class QuoteMachine extends React.Component{
                         }
                     }
                 >
-                    Get a random quote
+                    Get a new quote
                 </button>
                 <a id="tweet-quote" target="_blank" rel="noopener noreferrer" href="http://twitter.com/intent/tweet">
-                    <button type="button" className="btn btn-info">
+                    <button class ="butt" style={{backgroundColor:this.state.color}}>
                         Tweet <i class="fab fa-twitter"></i>
                     </button>
                 </a>
+                </div>
                 <br/>             
-            </React.Fragment>
+            </div>
         )
     }
     
@@ -77,7 +79,6 @@ class QuoteMachine extends React.Component{
             {color: colory} 
         )   
     }
-
 }
  
 export default QuoteMachine;
