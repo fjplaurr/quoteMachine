@@ -6,7 +6,7 @@ class QuoteMachine extends React.Component{
         this.state = {
             quote: '',
             author: '',
-            color: ''
+            color: 'rgb(0, 30, 40)'
         }
         this.changeColor = this.changeColor.bind(this);
         this.quote = this.getRandomQUote.bind(this);
@@ -38,7 +38,7 @@ class QuoteMachine extends React.Component{
                         }
                     }
                 >
-                    Get a new quote
+                    New quote
                 </button>
                 <a id="tweet-quote" target="_blank" rel="noopener noreferrer" href="http://twitter.com/intent/tweet">
                     <button class ="butt" style={{backgroundColor:this.state.color}}>
@@ -73,7 +73,7 @@ class QuoteMachine extends React.Component{
         var letters = '0123456789ABCDEF';
 	    var colory = '#';
 	    for (var i = 0; i < 6; i++ ) {
-		  colory += letters[Math.floor(Math.random() * 16)];
+		  colory += letters[Math.round(Math.random() * 16)];
 	    }
         this.setState(
             {color: colory} 
