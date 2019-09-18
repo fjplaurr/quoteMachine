@@ -1,8 +1,7 @@
 # Quote Machine
 
-This is the first of the Front End challenges from freeCodeCamp.com
+This is a Web app built with React.js that deliveres daily quotes that can be shared in Twitter.
 
-It is a website built with React.js that deliveres a random nice quote every time the user press a button. The quote can be shared in Twitter.
 
 ## Getting Started
 
@@ -32,4 +31,4 @@ Things you need to be installed to run this app:
 
 ## Authors
 
-* **Fran Urrutia** - [fjplaurr](https://github.com/fjplaurr)
+* **Francisco Javier Plaza Urrutia** - [fjplaurr](https://github.com/fjplaurr)
