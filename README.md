@@ -1,6 +1,6 @@
 # Quote Machine
 
-This is a Web app built with React.js that deliveres quotes that can be shared in Twitter.
+This is a Web app built with React.js that delivers quotes that can be shared in social media.
 
 
 ## Getting Started
